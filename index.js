@@ -13,7 +13,7 @@ const app = express();
 //     max: 5,
 // })
 // app.use(limiter);
-// app.set('trust proxy', 1);
+app.set('trust proxy', 1);
 
 // Set static folder
 // app.use(express.static('public'));
@@ -24,4 +24,4 @@ app.use('/api', require('./routes'));
 // Enable cors
 app.use(cors());
 
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT/*, () => console.log(`Server running on port ${PORT}`)*/);
