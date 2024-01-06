@@ -5,7 +5,7 @@ const needle = require('needle');
 // const apicache = require('apicache');
 
 // Env Vars
-// const API_BASE_URL = process.env.API_BASE_URL;
+const API_BASE_URL = process.env.API_BASE_URL;
 // const API_KEY_NAME = process.env.API_KEY_NAME;
 // const API_KEY_VALUE = process.env.API_KEY_VALUE;
 
@@ -21,7 +21,7 @@ router.get('/', /*cache('1 minutes'),*/ async (req, res) => {
         // })
         // const apiRes = await needle('get', `${API_BASE_URL}?${params}`);
 
-        const apiRes = await needle('get', 'https://zenquotes.io/api/random');
+        const apiRes = await needle('get', `${API_BASE_URL}/random`);
         const data = await apiRes.body;
         
         // Log the request to the public API
