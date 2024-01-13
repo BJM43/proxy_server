@@ -21,8 +21,8 @@ router.get('/', /*cache('1 minutes'),*/ async (req, res) => {
         // })
         // const apiRes = await needle('get', `${API_BASE_URL}?${params}`);
 
-        const apiRes = await needle('get', `${API_BASE_URL}/random`);
-        const data = await apiRes.body;
+        const apiRes = await needle('get', `${API_BASE_URL}/quotes`);
+        const data = apiRes.body;
         
         // Log the request to the public API
         // if (process.env.NODE_ENV !== 'production') {
